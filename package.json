@@ -1,0 +1,24 @@
+{
+  "name": "aws-cognito-hosted-ui-provider",
+  "version": "1.0.0",
+  "description": "A dependency-free client-facing sdk, that wraps api calls to aws-cognito's hosted ui auth server, and handles oauth 2 authentication by refreshing access tokens, storing credentials locally, revoking sessions and tokens, and navigating to the  hosted ui for a new authorization code, when tokens or sessions have expired. Can be used for both server-side and client-side apps, although client-side apps may require extra-setup.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "aws-cognito",
+    "sdk",
+    "hosted",
+    "ui",
+    "authentication",
+    "oauth2",
+    "client-side",
+    "server-side"
+  ],
+  "author": "Arky Asmal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
