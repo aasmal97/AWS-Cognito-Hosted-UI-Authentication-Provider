@@ -1,6 +1,6 @@
 {
   "name": "aws-cognito-hosted-ui-provider",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A client-facing sdk, that wraps api calls to aws-cognito's hosted ui auth server, and handles oauth 2 authentication by refreshing access tokens, storing credentials locally, revoking sessions and tokens, and navigating to the  hosted ui for a new authorization code, when tokens or sessions have expired. Can be used for both SSR (Sever-side rendered) and CSR (Client-side rendered) apps, although CSR apps may require extra-setup.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
