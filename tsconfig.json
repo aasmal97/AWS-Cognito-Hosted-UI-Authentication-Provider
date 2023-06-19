@@ -2,9 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["es6", "dom"],
+    "lib": ["es6","dom"],
     "outDir": "./dist",
     "strict": true,
+    "declaration": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true

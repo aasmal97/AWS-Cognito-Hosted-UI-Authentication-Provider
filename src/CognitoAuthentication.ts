@@ -10,7 +10,7 @@ import {
   CognitioCredentials,
   CognitoAuthenticationProps,
 } from "./types/cognitoTypes";
-export default class CognitoAuthentication {
+export class CognitoAuthentication {
   public userPoolId: string;
   public clientId: string;
   public customHostedUIDomain?: string;
@@ -112,7 +112,7 @@ export default class CognitoAuthentication {
       "code_challenge" | "code_challenge_method"
     >
   ) => {
-    const config: AxiosRequestConfig = {
+    const config: AxiosRequestConfig<any> = {
       url: `https://${this.customHostedUIDomain}/logout`,
       method: "GET",
       params: {
