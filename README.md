@@ -21,8 +21,10 @@ const cognitoClient = new CognitoAuthentication({
   customHostedUIDomain: appAuthUserDomain,
 });
 ```
-`userPoolId`: The id of your coginto user pool
+`userPoolId`: The id of your coginto user pool.
+
 `clientId`: The id of your cognito user pool web client.
+
 `customHostedUIDomain`: The domain of your hosted ui server
 
 If you want, you can also set a `loginCallbackUrl` and a `logoutCallbackUrl`, but if they aren't set, they will be set to the original page's [origin](https://developer.mozilla.org/en-US/docs/Web/API/Location/origin).
