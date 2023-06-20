@@ -29,7 +29,7 @@ If you want, you can also set a `loginCallbackUrl` and a `logoutCallbackUrl`, bu
 You must ensure that these values are also accepted callback URLs and sign-out URLs, in your [aws cognitio user pool client app](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html?icmpid=docs_cognito_console_help_panel). 
 
 ## Options
-This library a pop-up auth flow, or an in tab auth flow. 
+This library allows for either a pop-up auth flow, or an in tab auth flow. 
 
 #### In-Tab Auth Flow
 This is the default auth flow, when `popUpWindow = false | undefined`
@@ -39,9 +39,9 @@ This is the preferred method for **server-side rendered apps**, as it does not l
 #### Pop-up Auth Flow
 This is the auth flow, when `popUpWindow = true`
 
-This is the preferred method for **client-side-rendered apps**, as it does not navigate away from the current tab or window, and therefore, any data or states on the current page can be maintained. Here, the a pop-up to the hosted ui is generated, and the user is asked to login. After logging in, the pop-window is redirected to the callback url, **WHICH MUST HAVE THE SAME ORIGIN** as the original page. The authorization code is then read from the pop-up window's url, and the library on the original page, handles the rest of the authentication. The pop-up window is automatically closed after the code is read. 
+This is the preferred method for **client-side-rendered apps**, as it does not navigate away from the current tab or window, and therefore, any data or states on the current page can be maintained. Here, the a pop-up to the hosted ui is generated, and the user is asked to login. After logging in, the pop-window is redirected to the callback url, **WHICH MUST HAVE THE SAME ORIGIN** as the original page. The authorization code is then read from the pop-up window's url, and the library on the original page, handles the rest. The pop-up window is automatically closed after the code is read. 
 
-To prevent collision, where callback url page and the original page are exchanging a code at the same time, there is a 500ms delay before exchanging a code for credentials. This ensures the original page will always be able to exchange the code first, and store the credentials. 
+To prevent a collision, where the callback url page and the original page are exchanging a code at the same time, there is a 500ms delay before exchanging a code for credentials. This ensures the original page will always be able to exchange the code first, and store the credentials. 
 
 ## Exposed Methods
 - [login](CognitoAuthentication.md#login): Handles the entire oauth 2 login process. Meant to be used on a login button, or upon initial page load. Underneath, it uses the `refreshAccessToken`, `handlePopUpLogin`, `handleCode`, `usedStoredCredentials`, and `navigateToHostedUI` methods.
