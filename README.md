@@ -39,7 +39,7 @@ This is the preferred method for **server-side rendered apps**, as it does not l
 #### Pop-up Auth Flow
 This is the auth flow, when `popUpWindow = true`
 
-This is the preferred method for **client-side-rendered apps**, as it does not navigate away from the current tab or window, and therefore, any data or states on the current page can be maintained. Here, the a pop-up to the hosted ui is generated, and the user is asked to login. After logging in, the pop-window is redirected to the callback url, **WHICH MUST HAVE THE SAME ORIGIN** as the original page. The authorization code is then read from the pop-up window's url, and the library on the original page, handles the rest. The pop-up window is automatically closed after the code is read. 
+This is the preferred method for **client-side-rendered apps**, as it does not navigate away from the current tab or window, and therefore, any data or state on the current page can be maintained. Here, a pop-up window to the hosted ui is generated, and the user is asked to login. After logging in, the pop-window is redirected to the callback url, **WHICH MUST HAVE THE SAME ORIGIN** as the original page. The authorization code is then read from the pop-up window's url, and the library on the original page, handles the rest. The pop-up window is automatically closed after the code is read. 
 
 To prevent a collision, where the callback url page and the original page are exchanging a code at the same time, there is a 500ms delay before exchanging a code for credentials. This ensures the original page will always be able to exchange the code first, and store the credentials. 
 
